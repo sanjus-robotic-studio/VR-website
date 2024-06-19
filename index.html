@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Virtual Art Gallery</title>
+    <title>Sanjiv's Virtual Art Gallery</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   </head>
   <body>
@@ -10,9 +10,10 @@
       <a-plane position="0 -1 0" rotation="-90 0 0" width="20" height="20" color="#7BC8A4"></a-plane>
       
       <!-- Walls -->
-      <a-box position="0 2.5 -10" width="20" height="5" depth="0.1" color="#FFF"></a-box>
-      <a-box position="10 2.5 0" width="0.1" height="5" depth="20" color="#FFF"></a-box>
-      <a-box position="-10 2.5 0" width="0.1" height="5" depth="20" color="#FFF"></a-box>
+      <a-box position="0 0 -10" width="20" height="10" depth="0.1" color="#FFF"></a-box>
+      <a-box position="10 0 0" width="0.1" height="10" depth="20" color="#FFF"></a-box>
+      <a-box position="-10 0 0" width="0.1" height="10" depth="20" color="#FFF"></a-box>
+      <a-box position="0 0 10" width="20" height="10" depth="0.1" color="#FFF"></a-box>
       
       <!-- Camera and Controls -->
       <a-entity camera look-controls wasd-controls position="0 1.6 5"></a-entity>
@@ -22,16 +23,102 @@
       <a-light type="point" intensity="0.8" position="2 4 4"></a-light>
       
       <!-- Artworks -->
-      <a-plane position="-3 2 -5" width="4" height="3" src="#art1" rotation="0 0 0" show-info data-info="Description of Art 1"></a-plane>
-      <a-plane position="3 2 -5" width="4" height="3" src="#art2" rotation="0 0 0" show-info data-info="Description of Art 2"></a-plane>
+      <!-- Front Wall -->
+      <a-entity position="-6 2 -9.9">
+        <a-text value="Mona Lisa" color="#000" align="center" position="0 2 0" width="4"></a-text>
+        <a-plane width="4" height="3" src="#monaLisa" show-info data-info="Mona Lisa by Leonardo da Vinci"></a-plane>
+      </a-entity>
+      <a-entity position="0 2 -9.9">
+        <a-text value="Starry Night" color="#000" align="center" position="0 2 0" width="4"></a-text>
+        <a-plane width="4" height="3" src="#starryNight" show-info data-info="Starry Night by Vincent van Gogh"></a-plane>
+      </a-entity>
+      <a-entity position="6 2 -9.9">
+        <a-text value="The Persistence of Memory" color="#000" align="center" position="0 2 0" width="4"></a-text>
+        <a-plane width="4" height="3" src="#persistenceMemory" show-info data-info="The Persistence of Memory by Salvador Dalí"></a-plane>
+      </a-entity>
       
+      <!-- Back Wall -->
+      <a-entity position="-6 2 9.9" rotation="0 180 0">
+        <a-text value="The Scream" color="#000" align="center" position="0 2 0" width="4"></a-text>
+        <a-plane width="4" height="3" src="#theScream" show-info data-info="The Scream by Edvard Munch"></a-plane>
+      </a-entity>
+      <a-entity position="0 2 9.9" rotation="0 180 0">
+        <a-text value="Girl with a Pearl Earring" color="#000" align="center" position="0 2 0" width="4"></a-text>
+        <a-plane width="4" height="3" src="#pearlEarring" show-info data-info="Girl with a Pearl Earring by Johannes Vermeer"></a-plane>
+      </a-entity>
+      <a-entity position="6 2 9.9" rotation="0 180 0">
+        <a-text value="Guernica" color="#000" align="center" position="0 2 0" width="4"></a-text>
+        <a-plane width="4" height="3" src="#guernica" show-info data-info="Guernica by Pablo Picasso"></a-plane>
+      </a-entity>
       
+      <!-- Left Wall -->
+      <a-entity position="-9.9 2 -6" rotation="0 90 0">
+        <a-text value="The Last Supper" color="#000" align="center" position="0 2 0" width="4"></a-text>
+        <a-plane width="4" height="3" src="#lastSupper" show-info data-info="The Last Supper by Leonardo da Vinci"></a-plane>
+      </a-entity>
+      <a-entity position="-9.9 2 0" rotation="0 90 0">
+        <a-text value="The Creation of Adam" color="#000" align="center" position="0 2 0" width="4"></a-text>
+        <a-plane width="4" height="3" src="#creationAdam" show-info data-info="The Creation of Adam by Michelangelo"></a-plane>
+      </a-entity>
+      <a-entity position="-9.9 2 6" rotation="0 90 0">
+        <a-text value="American Gothic" color="#000" align="center" position="0 2 0" width="4"></a-text>
+        <a-plane width="4" height="3" src="#americanGothic" show-info data-info="American Gothic by Grant Wood"></a-plane>
+      </a-entity>
+      
+      <!-- Right Wall -->
+      <a-entity position="9.9 2 -6" rotation="0 -90 0">
+        <a-text value="The Birth of Venus" color="#000" align="center" position="0 2 0" width="4"></a-text>
+        <a-plane width="4" height="3" src="#birthVenus" show-info data-info="The Birth of Venus by Sandro Botticelli"></a-plane>
+      </a-entity>
+      <a-entity position="9.9 2 0" rotation="0 -90 0">
+        <a-text value="The Night Watch" color="#000" align="center" position="0 2 0" width="4"></a-text>
+        <a-plane width="4" height="3" src="#nightWatch" show-info data-info="The Night Watch by Rembrandt"></a-plane>
+      </a-entity>
+      <a-entity position="9.9 2 6" rotation="0 -90 0">
+        <a-text value="The Kiss" color="#000" align="center" position="0 2 0" width="4"></a-text>
+        <a-plane width="4" height="3" src="#theKiss" show-info data-info="The Kiss by Gustav Klimt"></a-plane>
+      </a-entity>
+    
+      
+      </a-asset-item>
       <!-- Assets -->
       <a-assets>
-        <img id="art1" src="https://example.com/path/to/art1.jpg">
-        <img id="art2" src="https://example.com/path/to/art2.jpg">
+        <!-- Mona Lisa -->
+        <img id="monaLisa" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/640px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg">
+        
+        <!-- Starry Night -->
+        <img id="starryNight" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/640px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg">
+        
+        <!-- The Persistence of Memory -->
+        <img id="persistenceMemory" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSt-fx7ZRKfXBot1gqCR7gYsT783P9ZI7gV3g&s">
+        
+        <!-- The Scream -->
+        <img id="theScream" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/The_Scream.jpg/640px-The_Scream.jpg">
+        
+        <!-- Girl with a Pearl Earring -->
+        <img id="pearlEarring" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Meisje_met_de_parel.jpg/640px-Meisje_met_de_parel.jpg">
+        
+        <!-- Guernica -->
+        <img id="guernica" src="https://upload.wikimedia.org/wikipedia/en/thumb/7/74/PicassoGuernica.jpg/400px-PicassoGuernica.jpg">
+        
+        <!-- The Last Supper -->
+        <img id="lastSupper" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg/640px-The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg">
+        
+        <!-- The Creation of Adam -->
+        <img id="creationAdam" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_txCTm1f1226APOtr28XGIIgMUIXRX8yosw&s">
+        
+        <!-- American Gothic -->
+        <img id="americanGothic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjVnMwqihzhYhxYeyEr6qvyGlD_mbAz3NK7Q&s">
+        
+        <!-- The Birth of Venus -->
+        <img id="birthVenus" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/800px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg">
+        
+        <!-- The Night Watch -->
+        <img id="nightWatch" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/The_Night_Watch_-_HD.jpg/1200px-The_Night_Watch_-_HD.jpg">
+        
+        <!-- The Kiss -->
+        <img id="theKiss" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGQSZ1xhcn62hCL0vtkrbBBo6ugIhWCbH24g&s">
       </a-assets>
-    
     </a-scene>
   </body>
 </html>
